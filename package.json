@@ -1,0 +1,30 @@
+{
+  "name": "replon",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@react-icons/all-files": "^4.1.0",
+    "@tanstack/react-query": "^5.59.16",
+    "apexcharts": "^3.54.1",
+    "autoprefixer": "^10.4.20",
+    "axios": "^1.7.7",
+    "flowbite": "^2.5.2",
+    "flowbite-react": "^0.10.2",
+    "next": "14.2.14",
+    "react": "^18.2.0",
+    "react-apexcharts": "^1.4.1",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.53.1",
+    "react-toastify": "^10.0.6"
+  },
+  "devDependencies": {
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.1"
+  }
+}
