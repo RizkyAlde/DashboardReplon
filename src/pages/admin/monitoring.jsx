@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { UseConditionGH } from "@/query/UseConditionGH"; // Adjust the import based on your file structure
+import { UseConditionGH } from "@/query/useConditionGH"; // Adjust the import based on your file structure
 import withLayout from "@/layouts/withLayout";
 import DefaultCard from "@/components/DefaultCard";
 import TimeSeries from "@/components/TimeSeries";
