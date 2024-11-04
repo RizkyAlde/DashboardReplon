@@ -51,7 +51,7 @@ const AdminPage = () => {
             id: 'basic-bar'
         },
         xaxis: {
-            categories: ['GR1', 'GR2', 'GR3', 'GR4', 'GR5', 'GR6', 'GR7', 'GR8', 'GR9', 'GR10', 'GR11', 'GR12']
+            categories: ['GH1', 'GH2', 'GH3', 'GH4', 'GH5', 'GH6', 'GH7', 'GH8', 'GH9', 'GH10', 'GH11', 'GH12']
         }
     };
 

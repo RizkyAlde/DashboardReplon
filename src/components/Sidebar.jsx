@@ -7,7 +7,8 @@ import { MdOutlineShoppingCart, MdOnlinePrediction } from "react-icons/md";
 import { PiGasPump } from "react-icons/pi";
 import { IoIosLogOut } from "react-icons/io";
 import { UseNotification } from "@/query/useNotification";
-import {IoIosInformationCircleOutline} from "@react-icons/all-files/io/IoIosInformationCircleOutline";
+import { IoIosInformationCircleOutline } from "@react-icons/all-files/io/IoIosInformationCircleOutline";
+import Notification from "@/components/Notification";
 
 export function SidebarWithBurgerMenu({ children }) {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -51,11 +52,11 @@ export function SidebarWithBurgerMenu({ children }) {
                     className="h-full px-3 py-4 overflow-y-auto"
                     style={{
                         background: "rgb(174,210,96)",
-                        background: "linear-gradient(0deg, rgba(174,210,96,1) 22%, rgba(253,246,45,1) 100%)",
+                        background: "linear-gradient(0deg, rgba(158, 255, 61, 1) 2%, rgba(255,194,36,1) 100%)",
                     }}
                 >
                     <div className="flex justify-center flex-col items-center">
-                        <Image src="/assets/images/logo.png" alt="Logo" width={100} height={100} />
+                        <Image src="/assets/images/logo.png" alt="Logo" width={250} height={250} />
                         <h2 className="mt-4 text-2xl mb-4 font-semibold text-slate-100 dark:text-white">Dashboard Replon</h2>
                     </div>
                     <ul className="space-y-2 font-medium">
@@ -135,22 +136,19 @@ export function SidebarWithBurgerMenu({ children }) {
 
             <div className={`p-4 sm:ml-64 ${isSidebarOpen ? "opacity-50" : ""}`}
                  onClick={() => isSidebarOpen && toggleSidebar()}>
-                <div className="sticky rounded-2xl top-0 z-30 text-white bg-black shadow-md">
+                <div className="sticky top-0 z-30 shadow-md bg-black text-white rounded-2xl pointer-events-none">
                     <div className="flex justify-between items-center p-4">
                         <div className="text-center">
                             <h1 className="text-xl font-semibold">EEPIS</h1>
                             <h1 className="text-md font-semibold">Dashboard Replon</h1>
                         </div>
-                        <p className="text-center hidden lg:inline text-xs">Visualization of greenhouse melon
-                            cultivation conditions Wates District, Blitar Regency, East Java</p>
-                        {/* Notification button */}
-                        <button
-                            id="dropdownNotificationButton"
-                            className="relative inline-flex items-center text-sm font-medium text-center text-gray-500 hover:text-gray-900 focus:outline-none dark:hover:text-white dark:text-gray-400"
-                            type="button"
-                        >
-                            {/* Notification Icon */}
-                        </button>
+                        <p className="hidden lg:inline text-center text-xs">
+                            Visualization of greenhouse melon cultivation conditions Wates District, Blitar Regency,
+                            East Java
+                        </p>
+                        <div className="relative z-20 pointer-events-auto">
+                            <Notification/>
+                        </div>
                     </div>
                 </div>
                 <div className="mt-4">

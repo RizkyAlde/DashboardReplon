@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const DefaultCard = ({ title, subTitle, image, value, backgroud }) => {
     return (
-        <div className={`${backgroud ? backgroud : 'bg-yellow'} p-4 rounded-lg shadow-md max-w-xs w-full`}>
+        <div className={`${backgroud ? backgroud : 'bg-yellow-light'} p-4 rounded-lg shadow-md max-w-xs w-full`}>
             <h4 className="text-xl text-center font-semibold text-gray-800 mb-2">{title}</h4>
             <h5 className="text-center mb-2">{subTitle}</h5>
             <div className="flex justify-between gap-4 items-center">

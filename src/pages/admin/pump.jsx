@@ -4,6 +4,7 @@ import PumpStatus from "@/components/PumpStatus";
 import dynamic from "next/dynamic";
 import {useTimeSeriesPump} from "@/query/useTimeSeriesPump";
 import {useState} from "react";
+import PumpAllGh from "@/components/PumpAllGh";
 
 const BarChart = dynamic(() => import('@/components/BarChart'), { ssr: false });
 
@@ -43,20 +44,7 @@ const Pump = () => {
     <div className="grid w-full grid-cols-1 justify-center">
         <div className="p-6 w-full bg-white border border-gray-200 rounded-lg shadow mb-4">
             <h3 className="text-2xl text-green-700 text-center font-semibold text-gray-800 mb-4">Status Pompa 12 Greenhouse</h3>
-            <div className="grid lg:grid-cols-4 gap-4 grid-cols-2">
-                <PumpStatus pumpStatus="ON" title="Greenhouse 1"/>
-                <PumpStatus pumpStatus="ON" title="Greenhouse 2"/>
-                <PumpStatus pumpStatus="ON" title="Greenhouse 3"/>
-                <PumpStatus pumpStatus="ON" title="Greenhouse 4"/>
-                <PumpStatus pumpStatus="ON" title="Greenhouse 5"/>
-                <PumpStatus pumpStatus="ON" title="Greenhouse 6"/>
-                <PumpStatus pumpStatus="ON" title="Greenhouse 7"/>
-                <PumpStatus pumpStatus="ON" title="Greenhouse 8"/>
-                <PumpStatus pumpStatus="ON" title="Greenhouse 9"/>
-                <PumpStatus pumpStatus="ON" title="Greenhouse 10"/>
-                <PumpStatus pumpStatus="ON" title="Greenhouse 11"/>
-                <PumpStatus pumpStatus="ON" title="Greenhouse 12"/>
-            </div>
+            <PumpAllGh />
         </div>
 
         <div className="p-6 w-full bg-white border border-gray-200 rounded-lg shadow mb-4">

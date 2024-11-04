@@ -19,7 +19,7 @@ module.exports = {
           dark: '#336600',  // dark green
         },
         yellow: {
-          light: '#FFFFE0',  // light yellow
+          light: '#FFA62F',  // light yellow
           DEFAULT: '#FFB800',  // yellow
           dark: '#FFD700',  // gold
         },
