@@ -3,6 +3,7 @@ import DefaultCard from "@/components/DefaultCard";
 import {UseProductionPlot} from "@/query/useProductionPlot";
 import dynamic from "next/dynamic";
 import ProductionAllGh from "@/components/ProductionAllGh";
+import LineChartProduction from "@/components/LineChartProduction";
 
 const ScatterChart = dynamic(() => import('@/components/ScatterChart'), { ssr: false });
 const LineChart = dynamic(() => import('@/components/LineChart'), { ssr: false });
@@ -71,7 +72,7 @@ const Production = () => {
               className="p-3 w-full flex gap-2 flex-col md:flex-row bg-white border border-gray-200 rounded-lg shadow mb-4">
               <div className="p-6 w-full bg-green-light border border-gray-200 rounded-lg shadow mb-4">
                   <h3 className="text-2xl  font-semibold text-gray-800 mb-4">Prediksi Jumlah Produksi</h3>
-                  <LineChart width="100%" options={options} series={series}/>
+                  <LineChartProduction />
               </div>
               <div className="p-6 w-full bg-green-light border border-gray-200 rounded-lg shadow mb-4">
                   <h3 className="text-2xl  font-semibold text-gray-800 mb-4">Produksi Tiap GH</h3>
