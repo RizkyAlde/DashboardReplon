@@ -1,63 +1,94 @@
-import {useChartPrediction} from "@/query/useChartPrediction";
+import { useChartPrediction } from "@/query/useChartPrediction";
 import dynamic from "next/dynamic";
+import { useState } from "react";
 
-const LineChart = dynamic(() => import('@/components/LineChart'), {ssr: false});
+const LineChart = dynamic(() => import('@/components/LineChart'), { ssr: false });
 
-const LineChartPrediction = ({gh}) => {
+const LineChartPrediction = ({ gh }) => {
+    const [selectedType, setSelectedType] = useState('temp');
 
-    const {data, isLoading, error} = useChartPrediction(gh);
+    const { data, isLoading, error } = useChartPrediction(gh);
 
-    const options = {
-        colors: ['#228B22'],
-        chart: {
-            id: 'basic-bar',
-            zoom: {
-                enabled: false,
-            }
-        },
-        xaxis: {
-            categories: ['00:00', '01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00'],
-        }
+    // Mendapatkan jam sekarang untuk menentukan kategori (sumbu X)
+    const now = new Date();
+    const currentHour = now.getHours();
+    const categories = Array.from({ length: 24 }, (_, i) => i.toString().padStart(2, '0') + ":00");
+
+    // Filter current data berdasarkan jam saat ini
+    const currentTemperature = data?.currentTemperature.slice(0, currentHour + 1) || [];
+    const currentLumen = data?.currentLumen.slice(0, currentHour + 1) || [];
+    const currentHumidity = data?.currentHumidity.slice(0, currentHour + 1) || [];
+
+    // Data prediksi tetap ditampilkan penuh 24 jam
+    const predictedTemperature = data?.predictedTemperature || [];
+    const predictedLumen = data?.predictedLumen || [];
+    const predictedHumidity = data?.predictedHumidity || [];
+
+    // Mengubah jenis data yang dipilih dari dropdown
+    const handleOnChange = (e) => {
+        setSelectedType(e.target.value);
     };
 
+    // Series untuk LineChart berdasarkan pilihan jenis data
     const series = [
         {
-            name: "Temp",
-            data: data && data.temperature
+            name: `Predicted ${selectedType === 'temp' ? 'Temperature' : selectedType === 'lumen' ? 'Lumen' : 'Humidity'}`,
+            data: selectedType === 'temp' ? predictedTemperature : selectedType === 'lumen' ? predictedLumen : predictedHumidity,
+        },
+        {
+            name: `Current ${selectedType === 'temp' ? 'Temperature' : selectedType === 'lumen' ? 'Lumen' : 'Humidity'}`,
+            data: selectedType === 'temp' ? currentTemperature : selectedType === 'lumen' ? currentLumen : currentHumidity,
         }
     ];
 
-    const series1 = [
-        {
-            name: "Lumen",
-            data: data && data.lumen
-        }
-    ];
-
-    const series2 = [
-        {
-            name: "Humid",
-            data: data && data.humidity
-        }
-    ];
+    const options = {
+        colors: ['#AED260', '#F39C12'],
+        chart: {
+            id: 'basic-bar',
+            type: 'line',
+            height: 250,
+            zoom: {
+                enabled: false,
+            },
+        },
+        xaxis: {
+            categories: categories, // Tampilkan semua 24 jam
+            title: {
+                text: 'Time',
+            },
+        },
+        title: {
+            text: 'Greenhouse Data Prediction',
+            align: 'center',
+        },
+        yaxis: {
+            title: {
+                text: 'Values',
+            },
+        },
+    };
 
     if (isLoading) return <p className="flex justify-center items-center">Loading...</p>;
     if (error) return <p className="flex justify-center items-center">Error: {error.message}</p>;
 
     return (
-        <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-            <div className="p-6 bg-green-light w-full bg-white border border-gray-200 rounded-lg shadow mb-4">
-                <h3 className="text-2xl text-green-700 font-semibold text-gray-800 mb-4">Grafik Temperature</h3>
-                <LineChart options={options} series={series} width="100%"/>
+        <div >
+            <div className="mb-4">
+                <label htmlFor="dataType" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                    Pilih Overview
+                </label>
+                <select
+                    id="dataType"
+                    value={selectedType}
+                    onChange={handleOnChange}
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                >
+                    <option value="temp">Suhu</option>
+                    <option value="humid">Kelembapan Udara</option>
+                    <option value="lumen">Intensitas Cahaya</option>
+                </select>
             </div>
-            <div className="p-6 bg-green-light w-full bg-white border border-gray-200 rounded-lg shadow mb-4">
-                <h3 className="text-2xl text-green-700 font-semibold text-gray-800 mb-4">Grafik Lumen</h3>
-                <LineChart options={options} series={series1} width="100%"/>
-            </div>
-            <div className="p-6 bg-green-light w-full bg-white border border-gray-200 rounded-lg shadow mb-4">
-                <h3 className="text-2xl text-green-700 font-semibold text-gray-800 mb-4">Grafik Humidity</h3>
-                <LineChart options={options} series={series2} width="100%"/>
-            </div>
+            <LineChart options={options} series={series} width="100%"/>
         </div>
     );
 }

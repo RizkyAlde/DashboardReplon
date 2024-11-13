@@ -67,7 +67,7 @@ export function SidebarWithBurgerMenu({ children }) {
                                 onClick={toggleSidebar}
                             >
                                 <RxDashboard/>
-                                <span className="ms-3 font-semibold text-lg">Dashboard</span>
+                                <span className="ms-3 font-semibold text-lg">Home</span>
                             </Link>
                         </li>
                         <li>
@@ -143,8 +143,7 @@ export function SidebarWithBurgerMenu({ children }) {
                             <h1 className="text-md font-semibold">Dashboard Replon</h1>
                         </div>
                         <p className="hidden lg:inline text-center text-xs">
-                            Visualization of greenhouse melon cultivation conditions Wates District, Blitar Regency,
-                            East Java
+                            Visualization of greenhouse melon cultivation conditions Wates District, Blitar Regency,East Java
                         </p>
                         <div className="relative z-20 pointer-events-auto">
                             <Notification/>

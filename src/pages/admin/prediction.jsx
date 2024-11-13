@@ -44,43 +44,70 @@ const Prediction = () => {
           <option value="11">Greenhouse 11</option>
           <option value="12">Greenhouse 12</option>
         </select>
+
         <div className="grid lg:grid-cols-4 gap-4 grid-cols-2">
-          <DefaultCard
+          <DefaultCard 
+            background={
+              data?.Next_Hour_Prediction.Predicted_Temperature > 20 && 
+              data?.Next_Hour_Prediction.Predicted_Temperature < 38 
+              ? "bg-green-light" 
+              : "" }
             image="celcius"
             subTitle="Celsius (°C)"
             title="SUHU"
             value={
-              data && data.Next_Hour_Prediction
-                ? `${data.Next_Hour_Prediction.Predicted_Temperature} %`
+              data?.Next_Hour_Prediction.Predicted_Temperature
+                ? `${data.Next_Hour_Prediction.Predicted_Temperature} °C`
                 : "N/A"
             }
           />
+
           <DefaultCard
+            background={
+              data?.Next_Hour_Prediction.Predicted_Humidity > 20 &&
+              data?.Next_Hour_Prediction.Predicted_Humidity < 85
+                ? "bg-green-light"
+                : ""
+            }
             image="kelembapan"
             subTitle="Relative (RH)"
             title="UDARA"
             value={
-              data && data.Next_Hour_Prediction
+              data?.Next_Hour_Prediction.Predicted_Humidity
                 ? `${data.Next_Hour_Prediction.Predicted_Humidity} %`
                 : "N/A"
             }
           />
+
           <DefaultCard
+            backgroud={
+              data?.Next_Hour_Prediction.Predicted_Lumen > 1 &&
+              data?.Next_Hour_Prediction.Predicted_Lumen < 50000
+                ? "bg-green-light"
+                : ""
+            }
             image="cahaya"
             subTitle="LUX (lux)"
             title="CAHAYA"
             value={
-              data && data.Next_Hour_Prediction
-                ? `${data.Next_Hour_Prediction.Predicted_Lumen} %`
+              data?.Next_Hour_Prediction.Predicted_Lumen
+                ? `${data.Next_Hour_Prediction.Predicted_Lumen} lux`
                 : "N/A"
             }
           />
+
           <DefaultCard
+            backgroud={
+              data?.Next_Hour_Prediction.Predicted_Soil > 1 &&
+              data?.Next_Hour_Prediction.Predicted_Soil < 85
+                ? "bg-green-light"
+                : ""
+            }
             image="tanah"
             subTitle="Relative (RH)"
             title="TANAH"
             value={
-              data && data.Next_Hour_Prediction.Predicted_Soil
+              data?.Next_Hour_Prediction.Predicted_Soil
                 ? `${data.Next_Hour_Prediction.Predicted_Soil} %`
                 : "N/A"
             }
