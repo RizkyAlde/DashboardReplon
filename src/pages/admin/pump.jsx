@@ -69,7 +69,7 @@ const Pump = () => {
                 <option value="11">Greenhouse 11</option>
                 <option value="12">Greenhouse 12</option>
             </select>
-            <LineChartPump options={options} series={series} width={"100%"}/>
+            <LineChartPump options={options} series={series} width={"90%"}/>
         </div>
     </div>
   );

@@ -55,15 +55,15 @@ const Production = () => {
               className="p-3 w-full flex gap-2 flex-col md:flex-row bg-white border border-gray-200 rounded-lg shadow mb-4">
               <div className="p-6 w-full bg-green-light border border-gray-200 rounded-lg shadow mb-4">
                   <div className="flex justify-between items-center p-2">
-                      <h3 className="text-2xl  font-semibold text-gray-800 mb-4">Rata rata Suhu</h3>
-                      <h4 className="text-lg p-4 bg-[#336600] rounded-lg font-semibold text-gray-800 mb-4">34 C</h4>
+                      <h3 className="text-2xl  font-semibold text-gray-800 mb-4">Rata-Rata Temp Terhadap Produksi</h3>
+                      <h4 className="text-lg p-4 bg-[#336600] rounded-lg font-semibold text-gray-800 mb-4">30 C</h4>
                   </div>
                   <ScatterChart width="100%" options={options} series={series}/>
               </div>
               <div className="p-6 w-full bg-green-light border border-gray-200 rounded-lg shadow mb-4">
                   <div className="flex justify-between gap-2 items-center p-2">
-                      <h3 className="text-2xl  font-semibold text-gray-800 mb-4">Intensitas Cahaya</h3>
-                      <h4 className="text-lg p-4 bg-[#336600] rounded-lg font-semibold text-gray-800 mb-4">117 lux</h4>
+                      <h3 className="text-2xl  font-semibold text-gray-800 mb-4">Rata-Rata Intensitas Cahaya Terhadap Produksi</h3>
+                      <h4 className="text-lg p-4 bg-[#336600] rounded-lg font-semibold text-gray-800 mb-4">1000 Lux</h4>
                   </div>
                   <ScatterChart width="100%" options={options} series={series}/>
               </div>
