@@ -56,8 +56,8 @@ export function SidebarWithBurgerMenu({ children }) {
                     }}
                 >
                     <div className="flex justify-center flex-col items-center">
-                        <Image src="/assets/images/logo.png" alt="Logo" width={250} height={250} />
-                        <h2 className="mt-4 text-2xl mb-4 font-semibold text-slate-100 dark:text-white">Dashboard Replon</h2>
+                        <Image src="/assets/images/logo.png" alt="Logo" width={150} height={150} />
+                        <span className="mt-4 text-2xl mb-4 font-semibold text-slate-100 dark:text-white"></span>
                     </div>
                     <ul className="space-y-2 font-medium">
                         <li>

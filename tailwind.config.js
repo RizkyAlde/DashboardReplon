@@ -13,40 +13,41 @@ module.exports = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        cover: {
+          light: "#9DE26F",
+        },
         green: {
-          light: '#AED260',  // light green
-          DEFAULT: '#228B22',  // forest green
-          dark: '#336600',  // dark green
+          light: "#AED260", // light green
+          DEFAULT: "#228B22", // forest green
+          dark: "#336600", // dark green
         },
         yellow: {
-          light: '#FFA62F',  // light yellow
-          DEFAULT: '#FFB800',  // yellow
-          dark: '#FFD700',  // gold
+          light: "#FFA62F", // light yellow
+          DEFAULT: "#FFB800", // yellow
+          dark: "#FFD700", // gold
         },
         orange: {
-          light: '#FFA07A',  // light salmon
-          DEFAULT: '#FF8C00',  // dark orange
-          dark: '#FF4500',  // orange red
+          light: "#FFA07A", // light salmon
+          DEFAULT: "#FF8C00", // dark orange
+          dark: "#FF4500", // orange red
         },
         red: {
-          light: '#FF6347',  // tomato
-          DEFAULT: '#FF0000',  // red
-          dark: '#8B0000',  // dark red
+          light: "#FF6347", // tomato
+          DEFAULT: "#FF0000", // red
+          dark: "#8B0000", // dark red
         },
         blue: {
-          light: '#ADD8E6',  // light blue
-          DEFAULT: '#0000FF',  // blue
-          dark: '#00008B',  // dark blue
+          light: "#ADD8E6", // light blue
+          DEFAULT: "#0000FF", // blue
+          dark: "#00008B", // dark blue
         },
         gray: {
-          light: '#D3D3D3',  // light gray
-          DEFAULT: '#A9A9A9',  // dark gray
-          dark: '#696969',  // dim gray
+          light: "#D3D3D3", // light gray
+          DEFAULT: "#A9A9A9", // dark gray
+          dark: "#696969", // dim gray
         },
       },
     },
   },
-  plugins: [
-    flowbite.plugin(),
-  ],
+  plugins: [flowbite.plugin()],
 };

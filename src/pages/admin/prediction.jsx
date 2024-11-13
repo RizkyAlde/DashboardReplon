@@ -59,7 +59,7 @@ const Prediction = () => {
             value={
               <span className="text-2xl font-bold">
                 {data?.Next_Hour_Prediction.Predicted_Temperature
-                  ? `${data.Next_Hour_Prediction.Predicted_Temperature}`
+                  ? `${data.Next_Hour_Prediction.Predicted_Temperature}°C`
                   : "N/A"}
               </span>
             }
@@ -78,7 +78,7 @@ const Prediction = () => {
             value={
               <span className="text-2xl font-bold">
                 {data?.Next_Hour_Prediction.Predicted_Humidity
-                  ? `${data.Next_Hour_Prediction.Predicted_Humidity}`
+                  ? `${data.Next_Hour_Prediction.Predicted_Humidity}%`
                   : "N/A"}
               </span>
             }
@@ -97,7 +97,7 @@ const Prediction = () => {
             value={
               <span className="text-2xl font-bold">
                 {data?.Next_Hour_Prediction.Predicted_Lumen
-                  ? `${data.Next_Hour_Prediction.Predicted_Lumen}`
+                  ? `${data.Next_Hour_Prediction.Predicted_Lumen} lux`
                   : "N/A"}
               </span>
             }
@@ -116,11 +116,21 @@ const Prediction = () => {
             value={
               <span className="text-2xl font-bold">
                 {data?.Next_Hour_Prediction.Predicted_Soil
-                  ? `${data.Next_Hour_Prediction.Predicted_Soil}`
+                  ? `${data.Next_Hour_Prediction.Predicted_Soil}%`
                   : "N/A"}
               </span>
             }
           />
+        </div>
+        <div className="mt-4 text-green-700 font-semibold text-gray-800">
+          <p className="text-sm">
+            <span className="inline-block w-3.5 h-3.5 bg-green-light mr-2"></span>
+            Kondisi ideal
+          </p>
+          <p className="text-sm">
+            <span className="inline-block w-3.5 h-3.5 bg-yellow-light mr-2"></span>
+            Kondisi tidak ideal
+          </p>
         </div>
       </div>
 

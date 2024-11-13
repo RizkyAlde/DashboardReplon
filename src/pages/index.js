@@ -35,21 +35,21 @@ export default function Home() {
   }
 
   return (
-    <div className="bg-green-light grid grid-cols-1 lg:grid-cols-2">
+    <div className="bg-cover-light grid grid-cols-1 lg:grid-cols-2">
       <div className="flex flex-col p-4 lg:p-0 justify-center items-center">
         <div className="flex justify-center flex-col lg:flex-row items-center mb-8">
           <Image
             src={`/assets/images/logo.png`}
             alt="Logo"
-            width={300}
-            height={300}
+            width={150}
+            height={150}
           />
-          <h1 className="text-4xl text-center font-bold text-gray-800">
+          <h1 className="text-gray-700 text-3xl text-center font-bold">
             DASHBOARD REPLON
           </h1>
         </div>
         <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-sm">
-          <h2 className="text-2xl mb-4">Login</h2>
+          <h2 className="text-gray-700 text-3xl font-bold mb-4">Login</h2>
 
           <div className="mb-4">
             <label

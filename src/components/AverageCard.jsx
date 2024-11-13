@@ -24,7 +24,7 @@ const AverageCard = () => {
           title="SUHU"
           value={
             data && data.average_temp ? (
-              <span className="text-2xl">{data.average_temp}</span> // Memperbesar angka
+              <span className="text-2xl">{`${data.average_temp}°C`}</span> // Menampilkan nilai dengan satuan °C
             ) : (
               "N/A"
             )
@@ -41,7 +41,7 @@ const AverageCard = () => {
           title="UDARA"
           value={
             data && data.average_humid ? (
-              <span className="text-2xl">{data.average_humid}</span> // Memperbesar angka
+              <span className="text-2xl">{`${data.average_humid}%`}</span> // Menampilkan nilai dengan satuan %
             ) : (
               "N/A"
             )
@@ -58,7 +58,7 @@ const AverageCard = () => {
           title="CAHAYA"
           value={
             data && data.average_lumen ? (
-              <span className="text-2xl">{data.average_lumen}</span> // Memperbesar angka
+              <span className="text-2xl">{`${data.average_lumen} lux`}</span> // Menampilkan nilai dengan satuan lux
             ) : (
               "N/A"
             )
@@ -75,7 +75,7 @@ const AverageCard = () => {
           title="TANAH"
           value={
             data && data.average_soil ? (
-              <span className="text-2xl">{data.average_soil}</span> // Memperbesar angka
+              <span className="text-2xl">{`${data.average_soil}%`}</span> // Menampilkan nilai dengan satuan %
             ) : (
               "N/A"
             )
