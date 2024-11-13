@@ -1,7 +1,7 @@
 import {useProductionAllNode} from "@/query/useProductionAllNode";
 import dynamic from "next/dynamic";
 
-const BarChart = dynamic(() => import('@/components/BarChart'), {ssr: false});
+const BarChart = dynamic(() => import('@/components/LineChartPump'), {ssr: false});
 
 const ProductionAllGh = () => {
 

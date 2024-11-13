@@ -67,6 +67,16 @@ const PrecentageCard = () => {
           )
         }
       />
+      <div className="mt-4 text-green-700 font-semibold text-gray-800">
+        <p className="text-sm">
+          <span className="inline-block w-3.5 h-3.5 bg-green-light mr-2"></span>
+          Kondisi ideal
+        </p>
+        <p className="text-sm">
+          <span className="inline-block w-3.5 h-3.5 bg-yellow-light mr-2"></span>
+          Kondisi tidak ideal
+        </p>
+      </div>
     </div>
   );
 };

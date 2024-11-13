@@ -1,6 +1,6 @@
 import Chart from "react-apexcharts";
 
-const BarChart = ({ options, series, width }) => {
+const LineChartPump = ({ options, series, width }) => {
     return (
         <div className="app bg-white rounded-lg">
             <div className="row">
@@ -8,7 +8,7 @@ const BarChart = ({ options, series, width }) => {
                     <Chart
                         options={options}
                         series={series}
-                        type="bar"
+                        type="line" // Mengganti bar dengan line untuk grafik garis
                         width={width}
                     />
                 </div>
@@ -17,4 +17,4 @@ const BarChart = ({ options, series, width }) => {
     );
 }
 
-export default BarChart;
+export default LineChartPump;

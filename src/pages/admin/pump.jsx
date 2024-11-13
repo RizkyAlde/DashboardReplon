@@ -5,8 +5,9 @@ import dynamic from "next/dynamic";
 import {useTimeSeriesPump} from "@/query/useTimeSeriesPump";
 import {useState} from "react";
 import PumpAllGh from "@/components/PumpAllGh";
+// import LineChartPump from "@/components/LineChartPump";
 
-const BarChart = dynamic(() => import('@/components/BarChart'), { ssr: false });
+const LineChartPump = dynamic(() => import('@/components/LineChartPump'), { ssr: false });
 
 const Pump = () => {
     const [selectedType, setSelectedType] = useState('1');
@@ -26,7 +27,8 @@ const Pump = () => {
             }
         },
         xaxis: {
-            categories: data ? data.time : []
+            categories: data ? data.time : [],
+            reverse: false,
         }
     }
 
@@ -67,7 +69,7 @@ const Pump = () => {
                 <option value="11">Greenhouse 11</option>
                 <option value="12">Greenhouse 12</option>
             </select>
-            <BarChart options={options} series={series} width={"100%"}/>
+            <LineChartPump options={options} series={series} width={"100%"}/>
         </div>
     </div>
   );

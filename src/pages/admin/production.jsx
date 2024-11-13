@@ -7,7 +7,7 @@ import LineChartProduction from "@/components/LineChartProduction";
 
 const ScatterChart = dynamic(() => import('@/components/ScatterChart'), { ssr: false });
 const LineChart = dynamic(() => import('@/components/LineChart'), { ssr: false });
-const BarChart = dynamic(() => import('@/components/BarChart'), { ssr: false });
+const BarChart = dynamic(() => import('@/components/LineChartPump'), { ssr: false });
 
 const Production = () => {
 
