@@ -3,9 +3,16 @@ import withLayout from "@/layouts/withLayout";
 const DetailPage = () => {
   return (
     <div className="p-6 w-full bg-white border border-gray-200 rounded-lg mb-4">
-      <h1 className="text-2xl font-bold text-black mb-4">
-        Alamat 12 Green House
-      </h1>
+      <div className="flex justify-between items-center mb-4">
+        <h1 className="text-2xl font-bold text-black">Alamat 12 Green House</h1>
+        <a
+          href="https://drive.google.com/file/d/1hCZB51ae3-sbodStIvzuprl4hOJC6TOB/view?usp=sharing" // Ganti dengan path ke file buku panduan
+          download
+          className="px-4 py-2 bg-blue-500 text-white rounded-lg font-semibold hover:bg-blue-600"
+        >
+          Download Buku Panduan
+        </a>
+      </div>
 
       <div className="space-y-4 text-black">
         <div>

@@ -46,24 +46,27 @@ const Prediction = () => {
         </select>
 
         <div className="grid lg:grid-cols-4 gap-4 grid-cols-2">
-          <DefaultCard 
-            background={
-              data?.Next_Hour_Prediction.Predicted_Temperature > 20 && 
-              data?.Next_Hour_Prediction.Predicted_Temperature < 38 
-              ? "bg-green-light" 
-              : "" }
+          <DefaultCard
+            backgroud={
+              data?.Next_Hour_Prediction.Predicted_Temperature > 20 &&
+              data?.Next_Hour_Prediction.Predicted_Temperature < 38
+                ? "bg-green-light"
+                : ""
+            }
             image="celcius"
             subTitle="Celsius (°C)"
             title="SUHU"
             value={
-              data?.Next_Hour_Prediction.Predicted_Temperature
-                ? `${data.Next_Hour_Prediction.Predicted_Temperature} °C`
-                : "N/A"
+              <span className="text-2xl font-bold">
+                {data?.Next_Hour_Prediction.Predicted_Temperature
+                  ? `${data.Next_Hour_Prediction.Predicted_Temperature}`
+                  : "N/A"}
+              </span>
             }
           />
 
           <DefaultCard
-            background={
+            backgroud={
               data?.Next_Hour_Prediction.Predicted_Humidity > 20 &&
               data?.Next_Hour_Prediction.Predicted_Humidity < 85
                 ? "bg-green-light"
@@ -73,9 +76,11 @@ const Prediction = () => {
             subTitle="Relative (RH)"
             title="UDARA"
             value={
-              data?.Next_Hour_Prediction.Predicted_Humidity
-                ? `${data.Next_Hour_Prediction.Predicted_Humidity} %`
-                : "N/A"
+              <span className="text-2xl font-bold">
+                {data?.Next_Hour_Prediction.Predicted_Humidity
+                  ? `${data.Next_Hour_Prediction.Predicted_Humidity}`
+                  : "N/A"}
+              </span>
             }
           />
 
@@ -90,9 +95,11 @@ const Prediction = () => {
             subTitle="LUX (lux)"
             title="CAHAYA"
             value={
-              data?.Next_Hour_Prediction.Predicted_Lumen
-                ? `${data.Next_Hour_Prediction.Predicted_Lumen} lux`
-                : "N/A"
+              <span className="text-2xl font-bold">
+                {data?.Next_Hour_Prediction.Predicted_Lumen
+                  ? `${data.Next_Hour_Prediction.Predicted_Lumen}`
+                  : "N/A"}
+              </span>
             }
           />
 
@@ -107,9 +114,11 @@ const Prediction = () => {
             subTitle="Relative (RH)"
             title="TANAH"
             value={
-              data?.Next_Hour_Prediction.Predicted_Soil
-                ? `${data.Next_Hour_Prediction.Predicted_Soil} %`
-                : "N/A"
+              <span className="text-2xl font-bold">
+                {data?.Next_Hour_Prediction.Predicted_Soil
+                  ? `${data.Next_Hour_Prediction.Predicted_Soil}`
+                  : "N/A"}
+              </span>
             }
           />
         </div>

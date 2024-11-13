@@ -18,7 +18,7 @@ const Notification = () => {
                 type="button"
             >
                 <svg
-                    className="w-10 h-10"
+                    className="w-7 h-7"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="currentColor"
