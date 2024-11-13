@@ -7,7 +7,7 @@ import { useOverview } from "@/query/useOverview";
 import AverageCard from "@/components/AverageCard";
 import PrecentageCard from "@/components/PrecentageCard";
 
-const BarChart = dynamic(() => import("@/components/LineChartPump"), { ssr: false });
+const BarChart = dynamic(() => import("@/components/BarChart"), { ssr: false });
 
 const AdminPage = () => {
   const [chartWidth, setChartWidth] = useState(0);
