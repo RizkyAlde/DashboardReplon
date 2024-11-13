@@ -43,6 +43,7 @@ export default function Home() {
             alt="Logo"
             width={150}
             height={150}
+            priority
           />
           <h1 className="text-gray-700 text-3xl text-center font-bold">
             DASHBOARD REPLON
