@@ -17,7 +17,6 @@ const Pump = () => {
 
     const {data, isLoading, error} = useTimeSeriesPump(selectedType);
     console.log(data);
-
     const options = {
         colors: ['#228B22'],
         chart: {
@@ -29,15 +28,25 @@ const Pump = () => {
         xaxis: {
             categories: data ? data.time : [],
             reverse: false,
+        },
+        yaxis: {
+            min: 0,  // Nilai minimum untuk OFF
+            max: 1,  // Nilai maksimum untuk ON
+            tickAmount: 1,  // Tentukan hanya 2 ticks (0 dan 1)
+            labels: {
+                formatter: function (value) {
+                    return value === 1 ? 'ON' : 'OFF';  // Ganti label dengan ON dan OFF
+                }
+            }
         }
-    }
-
+    };
+    
     const series = [
         {
             name: "pump-status",
             data: data ? data.dataPump : []
         }
-    ]
+    ];
 
     if (isLoading) return <p className="flex justify-center items-center">Loading...</p>;
     if (error) return <p className="flex justify-center items-center">Error: {error.message}</p>;
