@@ -24,7 +24,7 @@ const Prediction = () => {
     <div className="grid w-full grid-cols-1 justify-center">
       <div className="p-6 w-full bg-white border border-gray-200 rounded-lg shadow mb-4">
         <h3 className="text-2xl text-green-700 font-semibold text-gray-800 mb-4">
-          Prediksi{" "}
+          Prediksi 1 Jam Kedepan{" "}
         </h3>
         <select
           value={selectedType}
