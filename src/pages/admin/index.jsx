@@ -108,7 +108,7 @@ const AdminPage = () => {
           >
             <option value="temp">Suhu</option>
             <option value="soil">Kelembapan Tanah</option>
-            <option value="humid">Kelembapan Udara</option>
+            <option value="humid">Kelembaban Udara</option>
             <option value="lumen">Intensitas Cahaya</option>
           </select>
         </div>

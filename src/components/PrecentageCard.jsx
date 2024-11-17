@@ -30,7 +30,7 @@ const PrecentageCard = () => {
       />
       <CardBasic
         subTitle="Relative (RH)"
-        title="UDARA"
+        title="KELEMBABAN UDARA"
         value={
           data ? (
             <span className="text-2xl font-semibold">
@@ -43,7 +43,7 @@ const PrecentageCard = () => {
       />
       <CardBasic
         subTitle="LUX (lux)"
-        title="CAHAYA"
+        title="INTENSITAS CAHAYA"
         value={
           data ? (
             <span className="text-2xl font-semibold">
@@ -56,7 +56,7 @@ const PrecentageCard = () => {
       />
       <CardBasic
         subTitle="Relative (RH)"
-        title="TANAH"
+        title="KELEMBAPAN TANAH"
         value={
           data ? (
             <span className="text-2xl font-semibold">

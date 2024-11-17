@@ -38,7 +38,7 @@ const AverageCard = () => {
           }
           image="kelembapan"
           subTitle="Relative (RH)"
-          title="UDARA"
+          title="KELEMBABAN UDARA"
           value={
             data && data.average_humid ? (
               <span className="text-2xl">{`${data.average_humid}%`}</span> // Menampilkan nilai dengan satuan %
@@ -55,7 +55,7 @@ const AverageCard = () => {
           }
           image="cahaya"
           subTitle="LUX (lux)"
-          title="CAHAYA"
+          title="INTENSITAS CAHAYA"
           value={
             data && data.average_lumen ? (
               <span className="text-2xl">{`${data.average_lumen} lux`}</span> // Menampilkan nilai dengan satuan lux
@@ -72,7 +72,7 @@ const AverageCard = () => {
           }
           image="tanah"
           subTitle="Relative (RH)"
-          title="TANAH"
+          title="KELEMBAPAN TANAH"
           value={
             data && data.average_soil ? (
               <span className="text-2xl">{`${data.average_soil}%`}</span> // Menampilkan nilai dengan satuan %

@@ -74,7 +74,7 @@ const Prediction = () => {
             }
             image="kelembapan"
             subTitle="Relative (RH)"
-            title="UDARA"
+            title="KELEMBABAN UDARA"
             value={
               <span className="text-2xl font-bold">
                 {data?.Next_Hour_Prediction.Predicted_Humidity
@@ -93,7 +93,7 @@ const Prediction = () => {
             }
             image="cahaya"
             subTitle="LUX (lux)"
-            title="CAHAYA"
+            title="INTENSITAS CAHAYA"
             value={
               <span className="text-2xl font-bold">
                 {data?.Next_Hour_Prediction.Predicted_Lumen
@@ -112,7 +112,7 @@ const Prediction = () => {
             }
             image="tanah"
             subTitle="Relative (RH)"
-            title="TANAH"
+            title="KELEMBAPAN TANAH"
             value={
               <span className="text-2xl font-bold">
                 {data?.Next_Hour_Prediction.Predicted_Soil

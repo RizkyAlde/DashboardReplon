@@ -82,7 +82,7 @@ const Monitoring = () => {
             }
             image="kelembapan"
             subTitle="Relative (RH)"
-            title="UDARA"
+            title="KELEMBABAN UDARA"
             value={`${data?.humid || "N/A"}%`}
           />
           <DefaultCard
@@ -93,7 +93,7 @@ const Monitoring = () => {
             }
             image="cahaya"
             subTitle="LUX (lux)"
-            title="CAHAYA"
+            title="INTENSITAS CAHAYA"
             value={`${data?.lumen || "N/A"} lux`}
           />
           <DefaultCard
@@ -102,7 +102,7 @@ const Monitoring = () => {
             }
             image="tanah"
             subTitle="Relative (RH)"
-            title="TANAH"
+            title="KELEMBAPAN TANAH"
             value={`${data?.soil || "N/A"}%`}
           />
           <div className="mt-4 text-green-700 font-semibold text-gray-800">
