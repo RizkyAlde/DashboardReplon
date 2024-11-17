@@ -8,7 +8,7 @@ const BarChart = dynamic(() => import("@/components/BarChartProduction"), {
 
 const ProductionAllGh = () => {
   const { data, isLoading, error } = useProductionAllNode();
-  
+
   const [sortOrder, setSortOrder] = useState("none"); // Default: none (tidak ada filter)
 
   // Proses pengurutan data berdasarkan GH dan opsi sorting
@@ -52,12 +52,12 @@ const ProductionAllGh = () => {
       enabled: true,
       style: {
         fontSize: "50%", // Ukuran font
-        fontWeight: 90, // Ketebalan font
-        colors: ["#000"], // Warna font (hitam)
+        fontWeight: 40, // Ketebalan font
+        colors: ["#fff"], // Warna font (hitam)
       },
       offsetY: 0, // Menyesuaikan posisi vertikal
     },
-  };    
+  };
 
   const series = [
     {
@@ -74,29 +74,25 @@ const ProductionAllGh = () => {
     );
 
   return (
-    <div className="grid w-full grid-cols-1 justify-center">
-      <div className="p-6 w-full bg-white border border-gray-200 rounded-lg shadow mb-4">
-        <label
-          htmlFor="sortOrder"
-          className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-        >
-          Pilih Sorting
-        </label>
-        <select
-          id="sortOrder"
-          value={sortOrder}
-          onChange={(e) => setSortOrder(e.target.value)}
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-        >
-          <option value="none">None</option>
-          <option value="asc">Lowest to Highest</option>
-          <option value="desc">Highest to Lowest</option>
-        </select>
-        {/* Chart */}
-        <div>
-          <BarChart height="100%" width="100%" options={options} series={series} />
-        </div>
-      </div>
+    <div>
+      <label
+        htmlFor="sortOrder"
+        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+      >
+        Pilih Sorting
+      </label>
+      <select
+        id="sortOrder"
+        value={sortOrder}
+        onChange={(e) => setSortOrder(e.target.value)}
+        className="bg-gray-50 mb-4 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      >
+        <option value="none">None</option>
+        <option value="asc">Lowest to Highest</option>
+        <option value="desc">Highest to Lowest</option>
+      </select>
+      {/* Chart */}
+      <BarChart height="100%" width="100%" options={options} series={series} />
     </div>
   );
 };
