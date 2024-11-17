@@ -140,6 +140,12 @@ const Prediction = () => {
         </h3>
         <LineChartPrediction gh={selectedType} />
       </div>
+      {/* Footer */}
+      <footer className="w-full text-center py-1 border-t border-gray-300">
+        <p className="text-gray-600 text-sm">
+          © 2024 Politeknik Elektronika Negeri Surabaya
+        </p>
+      </footer>
     </div>
   );
 };

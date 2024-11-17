@@ -10,7 +10,6 @@ const ProductionAllGh = () => {
   const { data, isLoading, error } = useProductionAllNode();
   
   const [sortOrder, setSortOrder] = useState("none"); // Default: none (tidak ada filter)
-  const [chartWidth, setChartWidth] = useState("100%"); // Lebar chart default
 
   // Proses pengurutan data berdasarkan GH dan opsi sorting
   const sortedData = data
@@ -22,7 +21,7 @@ const ProductionAllGh = () => {
         .sort((a, b) => {
           if (sortOrder === "asc") return a.production - b.production; // Ascending
           if (sortOrder === "desc") return b.production - a.production; // Descending
-          return 0; // None (tidak diurutkan)
+          return a.gh - b.gh; // None: default urut GH (dari GH1 ke GH12)
         })
     : [];
 
@@ -35,23 +34,30 @@ const ProductionAllGh = () => {
       },
     },
     xaxis: {
-      categories: sortedData.map((item) => `GH ${item.gh}`), // Format sumbu x
+      categories: sortedData.map((item) => `${item.gh}`), // Hanya angka 1 hingga 12
+    },
+    yaxis: {
+      min: 0,
+      max: 3000, // Membatasi sumbu Y
     },
     plotOptions: {
       bar: {
         horizontal: false, // Menjaga agar bar tetap vertikal
-        columnWidth: "70%", // Ukuran bar tetap sesuai
+        dataLabels: {
+          position: "center", // Menempatkan nilai di tengah bar
+        },
       },
     },
     dataLabels: {
       enabled: true,
       style: {
-        fontSize: "14px", // Ukuran font label
-        fontWeight: "bold", // Ketebalan font
-        colors: ["#ffffff"], // Warna font (putih untuk kontras)
+        fontSize: "50%", // Ukuran font
+        fontWeight: 90, // Ketebalan font
+        colors: ["#000"], // Warna font (hitam)
       },
+      offsetY: 0, // Menyesuaikan posisi vertikal
     },
-  };
+  };    
 
   const series = [
     {
@@ -88,7 +94,7 @@ const ProductionAllGh = () => {
         </select>
         {/* Chart */}
         <div>
-          <BarChart options={options} series={series} width={chartWidth} />
+          <BarChart height="100%" width="100%" options={options} series={series} />
         </div>
       </div>
     </div>
