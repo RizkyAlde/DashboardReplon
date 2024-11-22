@@ -16,6 +16,11 @@ const PrecentageCard = () => {
   return (
     <div className="grid lg:grid-cols-4 gap-4 grid-cols-2">
       <CardBasic
+         backgroud={
+          data && data.temp_ideal_percentage > 49.9
+            ? "bg-green-light"
+            : ""
+        }
         subTitle="Celsius (°C)"
         title="SUHU"
         value={
@@ -29,6 +34,11 @@ const PrecentageCard = () => {
         }
       />
       <CardBasic
+        backgroud={
+        data && data.humid_ideal_percentage > 49.9
+          ? "bg-green-light"
+          : ""
+        }
         subTitle="Relative (RH)"
         title="KELEMBABAN UDARA"
         value={
@@ -42,6 +52,11 @@ const PrecentageCard = () => {
         }
       />
       <CardBasic
+        backgroud={
+        data && data.lumen_ideal_percentage > 49.9
+          ? "bg-green-light"
+          : ""
+        }
         subTitle="LUX (lux)"
         title="INTENSITAS CAHAYA"
         value={
@@ -55,6 +70,11 @@ const PrecentageCard = () => {
         }
       />
       <CardBasic
+      backgroud={
+        data && data.soil_ideal_percentage > 49.9
+         ? "bg-green-light"
+          : ""
+        }
         subTitle="Relative (RH)"
         title="KELEMBAPAN TANAH"
         value={
