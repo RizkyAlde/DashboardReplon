@@ -89,7 +89,7 @@ const Production = () => {
     <div className="grid w-full grid-cols-1 justify-center">
       <div className="p-6 w-full bg-white border border-gray-200 rounded-lg shadow mb-4">
         <h3 className="text-2xl text-green-700 font-semibold text-gray-800 mb-4">
-          Perbandingan Rata-Rata Greenhouse
+          Perbandingan Rata-Rata Greenhouse Per 3 Bulan
         </h3>
         <div>
           <label
